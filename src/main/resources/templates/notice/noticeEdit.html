@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:replace="layout/head :: head"></th:block>
+    <title>공지사항 수정하기</title>
+</head>
+<body>
+    <!-- header start-->
+    <th:block th:replace="layout/header :: header"></th:block>
+    <!-- header end -->
+    <div class="container">
+        <div>
+            <h2>공지사항 수정하기</h2>
+        </div>
+        <div>
+            <form th:action="@{'/notice/noticeEdit'}" method="post">
+                <table>
+                    <tr>
+                        <th>글 제목</th>
+                        <td>
+                            <input type="hidden" name="bno" id="bno" th:value="${noticeEdit.bno}" >
+                            <input type="text" name="title" id="title" placeholder="제목을 입력해주세요." th:value="${noticeEdit.title }" maxlength="50" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>글 내용</th>
+                        <td>
+                            <textarea name="content" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요." maxlength="1000" required>[[${noticeEdit.content}]]</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit">수정</button>
+                            &nbsp;
+                            <button type="reset">취소</button>
+                            &nbsp;
+                            <a href="/notice/noticeList">글목록1</a>
+                            <button type="button" onclick="location.href='/notice/noticeList'">글목록2</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- footer start -->
+    <th:block th:replace="layout/footer :: footer"></th:block>
+    <!-- footer end -->
+</body>
+</html>

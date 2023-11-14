@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:replace="layout/head :: head"></th:block>
+    <title>공지사항 상세보기</title>
+</head>
+<body>
+    <!-- header start-->
+    <th:block th:replace="layout/header :: header"></th:block>
+    <!-- header end -->
+    <div class="container">
+        <div>
+            <h2>공지사항 상세보기</h2>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td><span th:text="${nd.nno}"></span></td>
+                </tr>
+                <tr>
+                    <th><span th:text="${nd.title}"></span></th>
+                </tr>
+                <tr>
+                    <td><span th:text="${nd.content}"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a th:href="@{'/notice/noticeEdit?nno=' + ${nd.nno}}"><button>수정</button></a>
+                        &nbsp;
+                        <a th:href="@{'/notice/noticeDelete?nno=' + ${nd.nno}}"><button>삭제</button></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- footer start -->
+    <th:block th:replace="layout/footer :: footer"></th:block>
+    <!-- footer end -->
+</body>
+</html>

@@ -12,21 +12,17 @@
     <!-- header start-->
     <th:block th:replace="layout/header :: header"></th:block>
     <!-- header end -->
-    <br>
-    <br>
+    <div class="container">
         <div>
-            <div>
-                <h2>FAQ</h2>
-            </div>
-            <div>
-                <ul th:each="fl : ${faqList}">
-                    <li th:text="${fl.question}"></li>
-                    <li th:text="${fl.answer}"></li>
-                </ul>
-            </div>
+            <h2>FAQ</h2>
         </div>
-    <br>
-    <br>
+        <div>
+            <ul th:each="fl : ${faqList}">
+                <li th:text="${fl.question}"></li>
+                <li th:text="${fl.answer}"></li>
+            </ul>
+        </div>
+    </div>
     <!-- footer start -->
     <th:block th:replace="layout/footer :: footer"></th:block>
     <!-- footer end -->

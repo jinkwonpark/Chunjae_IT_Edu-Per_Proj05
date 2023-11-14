@@ -36,7 +36,7 @@
                 <nav class="limiter-menu-desktop container">
 
                     <!-- Logo desktop -->
-                    <a href="#" class="logo">
+                    <a href="/" class="logo">
                         <img src="images/icons/logo-01.png" alt="IMG-LOGO">
                     </a>
 
@@ -56,9 +56,9 @@
                             </li>
 
                             <li class="active-menu">
-                                <a href="index.html">고객센터</a>
+                                고객센터
                                 <ul class="sub-menu">
-                                    <li><a href="index.html">공지사항</a></li>
+                                    <li><a th:href="@{/notice/noticeList}">공지사항</a></li>
                                     <li><a th:href="@{/faq/faqList}">FAQ</a></li>
                                     <li><a href="home-03.html">Q&A</a></li>
                                 </ul>
